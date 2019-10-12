@@ -58,6 +58,24 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'video-player',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../video-player/video-player.module').then(m => m.VideoPlayerPageModule)
+          }
+        ]
+      },
+      {
+        path: 'nfc',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../nfc/nfc.module').then(m => m.NfcPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/app/tabs/schedule',
         pathMatch: 'full'

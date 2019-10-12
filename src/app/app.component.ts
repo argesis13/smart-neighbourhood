@@ -38,6 +38,16 @@ export class AppComponent implements OnInit {
       title: 'About',
       url: '/app/tabs/about',
       icon: 'information-circle'
+    },
+    {
+      title: 'Video Player',
+      url: '/app/tabs/video-player',
+      icon: 'information-circle'
+    },
+    {
+      title: 'NFC',
+      url: '/app/tabs/nfc',
+      icon: 'information-circle'
     }
   ];
   loggedIn = false;
