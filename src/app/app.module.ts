@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { VideoPlayer } from '@ionic-native/video-player/ngx';
 import { NFC, Ndef } from '@ionic-native/nfc/ngx';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { NFC, Ndef } from '@ionic-native/nfc/ngx';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {

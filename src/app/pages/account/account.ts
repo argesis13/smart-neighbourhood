@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 import { UserData } from '../../providers/user-data';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 
 @Component({
@@ -13,12 +14,32 @@ import { UserData } from '../../providers/user-data';
 })
 export class AccountPage implements AfterViewInit {
   username: string;
+  plates = ['B30ZBR', 'AG06FFE', 'DJ01BAC'];
+  nfcCode: string;
+  alerts = ['a', 'b', 'c'];
+  status: string;
+  public myForm: FormGroup;
+  private platesCount = 1;
 
   constructor(
     public alertCtrl: AlertController,
     public router: Router,
-    public userData: UserData
-  ) { }
+    public userData: UserData,
+    private formBuilder: FormBuilder
+  ) {
+    this.myForm = formBuilder.group({
+      player1: ['', Validators.required]
+    });
+  }
+
+  addControl() {
+    this.platesCount++;
+    this.myForm.addControl('plate' + this.platesCount, new FormControl('', Validators.required));
+  }
+
+  removeControl(control) {
+    this.myForm.removeControl(control.key);
+  }
 
   ngAfterViewInit() {
     this.getUsername();

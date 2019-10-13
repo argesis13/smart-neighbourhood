@@ -4,6 +4,7 @@ import { VideoPlayer } from '@ionic-native/video-player/ngx';
 import { Platform } from '@ionic/angular';
 import { Plugins } from '@capacitor/core';
 import * as CapacitorVPPlugin from 'capacitor-video-player';
+import {ConferenceData} from '../../providers/conference-data';
 
 const { CapacitorVideoPlayer, Device } = Plugins;
 
@@ -15,9 +16,17 @@ const { CapacitorVideoPlayer, Device } = Plugins;
 })
 export class VideoPlayerPage implements OnInit {
 
-  constructor(private videoPlayer: VideoPlayer) { }
+  cameras: any[] = [];
+
+  constructor(private videoPlayer: VideoPlayer, public confData: ConferenceData) { }
 
   ngOnInit() {
+  }
+
+  ionViewDidEnter() {
+    this.confData.getCameras().subscribe((cameras: any[]) => {
+      this.cameras = cameras;
+    });
   }
 
   async play() {

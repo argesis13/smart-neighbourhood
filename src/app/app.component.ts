@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
       icon: 'calendar'
     },
     {
-      title: 'Video Player',
+      title: 'Cameras',
       url: '/app/tabs/video-player',
       icon: 'videocam'
     },
@@ -40,24 +40,9 @@ export class AppComponent implements OnInit {
       icon: 'unlock'
     },
     {
-      title: 'Schedule',
-      url: '/app/tabs/schedule',
-      icon: 'calendar'
-    },
-    {
-      title: 'Speakers',
-      url: '/app/tabs/speakers',
-      icon: 'contacts'
-    },
-    {
       title: 'Map',
       url: '/app/tabs/map',
       icon: 'map'
-    },
-    {
-      title: 'About',
-      url: '/app/tabs/about',
-      icon: 'information-circle'
     }
 
     // <ion-icon name="flashlight"></ion-icon>

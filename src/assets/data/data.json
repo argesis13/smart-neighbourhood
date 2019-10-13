@@ -20,8 +20,8 @@
           "time": "8:15 am",
           "sessions": [
             {
-              "name": "Getting Started with Ionic",
-              "location": "Hall 2",
+              "name": "Barrier open",
+              "location": "Front Barrier",
               "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
               "speakerNames": ["Ted Turtle"],
               "timeStart": "9:30 am",
@@ -426,6 +426,64 @@
     {
       "name": "Navigation",
       "icon": "compass"
+    }
+  ],
+
+  "cameras": [
+    {
+      "name": "Door",
+      "url": "https://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+      "picture": "https://baltimorefishbowl.com/wp-content/uploads/2014/05/Parking-Lot.jpg"
+    },
+    {
+      "name": "Main Entrance",
+      "url": "https://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+      "picture": "https://baltimorefishbowl.com/wp-content/uploads/2014/05/Parking-Lot.jpg"
+    },
+    {
+      "name": "Front Barrier",
+      "url": "https://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+      "picture": "https://baltimorefishbowl.com/wp-content/uploads/2014/05/Parking-Lot.jpg"
+    },
+    {
+      "name": "North 1",
+      "url": "https://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+      "picture": "https://baltimorefishbowl.com/wp-content/uploads/2014/05/Parking-Lot.jpg"
+    },
+    {
+      "name": "North 2",
+      "url": "https://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+      "picture": "https://baltimorefishbowl.com/wp-content/uploads/2014/05/Parking-Lot.jpg"
+    },
+    {
+      "name": "South 1",
+      "url": "https://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+      "picture": "https://baltimorefishbowl.com/wp-content/uploads/2014/05/Parking-Lot.jpg"
+    },
+    {
+      "name": "South 2",
+      "url": "https://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+      "picture": "https://baltimorefishbowl.com/wp-content/uploads/2014/05/Parking-Lot.jpg"
+    },
+    {
+      "name": "West 1",
+      "url": "https://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+      "picture": "https://baltimorefishbowl.com/wp-content/uploads/2014/05/Parking-Lot.jpg"
+    },
+    {
+      "name": "West 2",
+      "url": "https://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+      "picture": "https://baltimorefishbowl.com/wp-content/uploads/2014/05/Parking-Lot.jpg"
+    },
+    {
+      "name": "East 1",
+      "url": "https://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+      "picture": "https://baltimorefishbowl.com/wp-content/uploads/2014/05/Parking-Lot.jpg"
+    },
+    {
+      "name": "East 2",
+      "url": "https://clips.vorwaerts-gmbh.de/VfE_html5.mp4",
+      "picture": "https://baltimorefishbowl.com/wp-content/uploads/2014/05/Parking-Lot.jpg"
     }
   ]
 }

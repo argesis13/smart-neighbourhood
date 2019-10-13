@@ -192,4 +192,12 @@ export class ConferenceData {
       })
     );
   }
+
+  getCameras() {
+    return this.load().pipe(
+      map((data: any) => {
+        return data.cameras;
+      })
+    );
+  }
 }
