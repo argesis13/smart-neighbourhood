@@ -11,6 +11,8 @@ import { ScheduleModule } from '../schedule/schedule.module';
 import { SessionDetailModule } from '../session-detail/session-detail.module';
 import { SpeakerDetailModule } from '../speaker-detail/speaker-detail.module';
 import { SpeakerListModule } from '../speaker-list/speaker-list.module';
+import {LogDetailModule} from '../log-detail/log-detail.module';
+import {LogsModule} from '../logs/logs.module';
 
 @NgModule({
   imports: [
@@ -18,6 +20,8 @@ import { SpeakerListModule } from '../speaker-list/speaker-list.module';
     CommonModule,
     IonicModule,
     MapModule,
+    LogsModule,
+    LogDetailModule,
     ScheduleModule,
     SessionDetailModule,
     SpeakerDetailModule,

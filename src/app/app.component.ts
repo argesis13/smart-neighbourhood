@@ -20,6 +20,26 @@ import { UserData } from './providers/user-data';
 export class AppComponent implements OnInit {
   appPages = [
     {
+      title: 'Dashboard',
+      url: '/app/tabs/dashboard',
+      icon: 'information-circle'
+    },
+    {
+      title: 'Logs',
+      url: '/app/tabs/logs',
+      icon: 'calendar'
+    },
+    {
+      title: 'Video Player',
+      url: '/app/tabs/video-player',
+      icon: 'videocam'
+    },
+    {
+      title: 'NFC',
+      url: '/app/tabs/nfc',
+      icon: 'unlock'
+    },
+    {
       title: 'Schedule',
       url: '/app/tabs/schedule',
       icon: 'calendar'
@@ -38,22 +58,8 @@ export class AppComponent implements OnInit {
       title: 'About',
       url: '/app/tabs/about',
       icon: 'information-circle'
-    },
-    {
-      title: 'Video Player',
-      url: '/app/tabs/video-player',
-      icon: 'videocam'
-    },
-    {
-      title: 'NFC',
-      url: '/app/tabs/nfc',
-      icon: 'unlock'
-    },
-    {
-      title: 'Dashboard',
-      url: '/app/tabs/dashboard',
-      icon: 'information-circle'
     }
+
     // <ion-icon name="flashlight"></ion-icon>
   ];
   loggedIn = false;
@@ -130,7 +136,7 @@ export class AppComponent implements OnInit {
 
   logout() {
     this.userData.logout().then(() => {
-      return this.router.navigateByUrl('/app/tabs/schedule');
+      return this.router.navigateByUrl('/login');
     });
   }
 

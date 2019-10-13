@@ -1,23 +1,23 @@
 {
-  "schedule": [
+  "logs": [
     {
       "date": "2047-05-17",
       "groups": [
         {
-          "time": "8:00 am",
+          "time": "4:00 am",
           "sessions": [
             {
-              "name": "Breakfast",
-              "timeStart": "8:00 am",
-              "timeEnd": "9:00 am",
-              "location": "Dining Hall",
+              "name": "Camera alert",
+              "timeStart": "4:16 am",
+              "timeEnd": "4:16 am",
+              "location": "West 1",
               "tracks": ["Food"],
               "id": "1"
             }
           ]
         },
         {
-          "time": "9:15 am",
+          "time": "8:15 am",
           "sessions": [
             {
               "name": "Getting Started with Ionic",
@@ -379,20 +379,10 @@
 
   "map": [
     {
-      "name": "Monona Terrace Convention Center",
-      "lat": 43.071584,
-      "lng": -89.38012,
+      "name": "InterContinental",
+      "lat": 44.4371,
+      "lng": 26.1024,
       "center": true
-    },
-    {
-      "name": "Ionic HQ",
-      "lat": 43.074395,
-      "lng": -89.381056
-    },
-    {
-      "name": "Afterparty - Brocach Irish Pub",
-      "lat": 43.07336,
-      "lng": -89.38335
     }
   ],
 

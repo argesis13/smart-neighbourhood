@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
 import { SchedulePage } from '../schedule/schedule';
+import { LogsPage} from '../logs/logs';
 
 
 const routes: Routes = [
@@ -19,6 +20,19 @@ const routes: Routes = [
           {
             path: 'session/:sessionId',
             loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
+          }
+        ]
+      },
+      {
+        path: 'logs',
+        children: [
+          {
+            path: '',
+            component: LogsPage,
+          },
+          {
+            path: 'logs/:logId',
+            loadChildren: () => import('../log-detail/log-detail.module').then(m => m.LogDetailModule)
           }
         ]
       },

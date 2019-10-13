@@ -28,8 +28,8 @@ export class ConferenceData {
     // build up the data by linking speakers to sessions
     this.data = data;
 
-    // loop through each day in the schedule
-    this.data.schedule.forEach((day: any) => {
+    // loop through each day in the logs
+    this.data.logs.forEach((day: any) => {
       // loop through each timeline group in the day
       day.groups.forEach((group: any) => {
         // loop through each session in the timeline group
@@ -62,7 +62,41 @@ export class ConferenceData {
   ) {
     return this.load().pipe(
       map((data: any) => {
-        const day = data.schedule[dayIndex];
+        const day = data.logs[dayIndex];
+        day.shownSessions = 0;
+
+        queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');
+        const queryWords = queryText.split(' ').filter(w => !!w.trim().length);
+
+        day.groups.forEach((group: any) => {
+          group.hide = true;
+
+          group.sessions.forEach((session: any) => {
+            // check if this session should show or not
+            this.filterSession(session, queryWords, excludeTracks, segment);
+
+            if (!session.hide) {
+              // if this session is not hidden then this group should show
+              group.hide = false;
+              day.shownSessions++;
+            }
+          });
+        });
+
+        return day;
+      })
+    );
+  }
+
+  getLogs(
+    dayIndex: number,
+    queryText = '',
+    excludeTracks: any[] = [],
+    segment = 'all'
+  ) {
+    return this.load().pipe(
+      map((data: any) => {
+        const day = data.logs[dayIndex];
         day.shownSessions = 0;
 
         queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');
