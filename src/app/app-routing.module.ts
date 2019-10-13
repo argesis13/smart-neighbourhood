@@ -34,7 +34,8 @@ const routes: Routes = [
     canLoad: [CheckTutorial]
   },
   { path: 'video-player', loadChildren: './pages/video-player/video-player.module#VideoPlayerPageModule' },
-  { path: 'nfc', loadChildren: './pages/nfc/nfc.module#NfcPageModule' }
+  { path: 'nfc', loadChildren: './pages/nfc/nfc.module#NfcPageModule' },
+  { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' }
 ];
 
 @NgModule({

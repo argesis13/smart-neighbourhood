@@ -76,6 +76,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'dashboard',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/app/tabs/schedule',
         pathMatch: 'full'

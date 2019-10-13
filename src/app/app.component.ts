@@ -42,13 +42,19 @@ export class AppComponent implements OnInit {
     {
       title: 'Video Player',
       url: '/app/tabs/video-player',
-      icon: 'information-circle'
+      icon: 'videocam'
     },
     {
       title: 'NFC',
       url: '/app/tabs/nfc',
+      icon: 'unlock'
+    },
+    {
+      title: 'Dashboard',
+      url: '/app/tabs/dashboard',
       icon: 'information-circle'
     }
+    // <ion-icon name="flashlight"></ion-icon>
   ];
   loggedIn = false;
   dark = false;

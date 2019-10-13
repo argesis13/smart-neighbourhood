@@ -13,6 +13,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { VideoPlayer } from '@ionic-native/video-player/ngx';
+import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 
 @NgModule({
   imports: [
@@ -27,7 +28,7 @@ import { VideoPlayer } from '@ionic-native/video-player/ngx';
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar, VideoPlayer],
+  providers: [InAppBrowser, SplashScreen, StatusBar, VideoPlayer, NFC, Ndef],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
