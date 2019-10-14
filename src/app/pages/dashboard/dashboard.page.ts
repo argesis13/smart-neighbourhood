@@ -14,7 +14,7 @@ export class DashboardPage implements OnInit {
   constructor(private router: Router) { }
 
   goToFamilyDetails() {
-    this.router.navigateByUrl('/app/tabs/add');
+    this.router.navigateByUrl('/app/tabs/family-details');
   }
 
 }

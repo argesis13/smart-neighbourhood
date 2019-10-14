@@ -8,6 +8,7 @@ import {TabsPageRoutingModule} from './tabs-page-routing.module';
 import {MapModule} from '../map/map.module';
 import {LogDetailModule} from '../log-detail/log-detail.module';
 import {LogsModule} from '../logs/logs.module';
+import {FamilyDetailsPageModule} from '../family-details/family-details.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {LogsModule} from '../logs/logs.module';
     MapModule,
     LogsModule,
     LogDetailModule,
-    TabsPageRoutingModule
+    TabsPageRoutingModule,
+    FamilyDetailsPageModule
   ],
   declarations: [
     TabsPage,

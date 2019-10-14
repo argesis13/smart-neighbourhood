@@ -59,6 +59,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'family-details',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../family-details/family-details.module').then(m => m.FamilyDetailsPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/app/tabs/schedule',
         pathMatch: 'full'
