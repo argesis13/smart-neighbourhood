@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'dashboard',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPage implements OnInit {
 
-  constructor() { }
-
   ngOnInit() {
+  }
+
+  constructor(private router: Router) { }
+
+  goToFamilyDetails() {
+    this.router.navigateByUrl('/app/tabs/add');
   }
 
 }
