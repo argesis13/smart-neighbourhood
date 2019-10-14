@@ -81,6 +81,20 @@ export class UserData {
     return this.storage.set('username', username);
   }
 
+  setBuilding(building: string): Promise<any> {
+    return this.storage.set('building', building);
+  }
+
+
+  setEntrance(entrance: string): Promise<any> {
+    return this.storage.set('entrance', entrance);
+  }
+
+
+  setApartment(apartment: string): Promise<any> {
+    return this.storage.set('apartment', apartment);
+  }
+
   getUsername(): Promise<string> {
     return this.storage.get('username').then((value) => {
       return value;

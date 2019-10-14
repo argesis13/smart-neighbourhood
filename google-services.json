@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "738763582066",
+    "firebase_url": "https://cartierul-iot.firebaseio.com",
+    "project_id": "cartierul-iot",
+    "storage_bucket": "cartierul-iot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738763582066:android:6a1bd3c1b5c55d694cb0eb",
+        "android_client_info": {
+          "package_name": "com.acvl.cartierul.iot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738763582066-d81l828ioeqjtvf71s43udo50mtf03j9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvxQRHghHBjttj4JQajz1rioLAp0MmzFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738763582066-d81l828ioeqjtvf71s43udo50mtf03j9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "738763582066-qt7tkqqoldbu05qbqjggo8hr70tv7tbf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.acvl.cartierul.iot"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
