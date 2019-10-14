@@ -19,7 +19,6 @@ export class AccountPage implements AfterViewInit {
   alerts = ['a', 'b', 'c'];
   status: string;
   public myForm: FormGroup;
-  private platesCount = 1;
 
   constructor(
     public alertCtrl: AlertController,
@@ -32,10 +31,7 @@ export class AccountPage implements AfterViewInit {
     });
   }
 
-  addControl() {
-    this.platesCount++;
-    this.myForm.addControl('plate' + this.platesCount, new FormControl('', Validators.required));
-  }
+
 
   removeControl(control) {
     this.myForm.removeControl(control.key);
