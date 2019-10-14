@@ -14,7 +14,7 @@
     <ion-grid fixed>
       <ion-row class="ion-align-items-stretch">
         <ion-col size="12" size-md="6">
-          <ion-card class="speaker-card" (click)="goToFamilyDetails()">
+          <ion-card class="speaker-card" [routerLink]="['/app/tabs/family-details']">
             <ion-card-header>
               <ion-item detail="false" lines="none" >
                 <ion-icon slot="start" name="contacts"></ion-icon>

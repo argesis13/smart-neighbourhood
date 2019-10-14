@@ -7,7 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FamilyDetailsPage implements OnInit {
 
-  members = ['Ma-ta', 'Tac-tu'];
+  mom = {
+    'username': 'mom',
+    'imageUrl': '../../assets/img/speakers/bear.jpg',
+    'status': 'IN'
+  };
+
+  dad = {
+    'username': 'dad',
+    'imageUrl': '../../assets/img/speakers/bear.jpg',
+    'status': 'OUT'
+  };
+
+  members = [this.mom, this.dad];
 
   constructor() { }
 
@@ -15,6 +27,9 @@ export class FamilyDetailsPage implements OnInit {
   }
 
   addMember() {
+    // username
+    // status
+    // picture
     console.log('add member');
   }
 
