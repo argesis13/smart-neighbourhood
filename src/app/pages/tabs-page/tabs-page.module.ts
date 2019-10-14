@@ -4,10 +4,7 @@ import {IonicModule} from '@ionic/angular';
 
 import {TabsPage} from './tabs-page';
 import {TabsPageRoutingModule} from './tabs-page-routing.module';
-
 import {MapModule} from '../map/map.module';
-import {LogDetailModule} from '../log-detail/log-detail.module';
-import {LogsModule} from '../logs/logs.module';
 import {FamilyDetailsPageModule} from '../family-details/family-details.module';
 
 @NgModule({
@@ -15,8 +12,6 @@ import {FamilyDetailsPageModule} from '../family-details/family-details.module';
     CommonModule,
     IonicModule,
     MapModule,
-    LogsModule,
-    LogDetailModule,
     TabsPageRoutingModule,
     FamilyDetailsPageModule
   ],

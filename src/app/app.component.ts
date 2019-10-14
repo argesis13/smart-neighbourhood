@@ -61,8 +61,7 @@ export class AppComponent implements OnInit {
     private storage: Storage,
     private userData: UserData,
     private swUpdate: SwUpdate,
-    private toastCtrl: ToastController,
-    private fcm: FCM
+    private toastCtrl: ToastController
   ) {
     this.initializeApp();
   }
@@ -70,9 +69,6 @@ export class AppComponent implements OnInit {
   async ngOnInit() {
     this.checkLoginStatus();
     this.listenForLoginEvents();
-    this.fcm.getToken().then(token => {
-      console.log(token);
-    });
 
     this.swUpdate.available.subscribe(async res => {
       const toast = await this.toastCtrl.create({
