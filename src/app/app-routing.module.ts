@@ -35,7 +35,8 @@ const routes: Routes = [
     path: 'app',
     loadChildren: () => import('./pages/tabs-page/tabs-page.module').then(m => m.TabsModule),
     canLoad: [AuthGuard]
-  }
+  },  { path: 'alerts', loadChildren: './pages/alerts/alerts.module#AlertsPageModule' }
+
 ];
 
 @NgModule({
