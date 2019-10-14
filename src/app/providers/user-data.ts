@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Events } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 
 @Injectable({
@@ -13,7 +15,8 @@ export class UserData {
 
   constructor(
     public events: Events,
-    public storage: Storage
+    public storage: Storage,
+    private http: HttpClient
   ) { }
 
   hasFavorite(sessionName: string): boolean {
@@ -32,10 +35,31 @@ export class UserData {
   }
 
   login(username: string): Promise<any> {
-    return this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
-      this.setUsername(username);
-      return this.events.publish('user:login');
-    });
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'GET',
+        'Access-Control-Allow-Origin': '*',
+      })
+    };
+    return this.http.get('http://localhost:8282/users/' + username).pipe(
+      map(response => {
+        return response.headers['status'];
+      }),
+      map(status => {
+        console.log(status);
+        if (status === 200) {
+          return this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
+            console.log(username);
+            this.setUsername(username);
+            return this.events.publish('user:login');
+          });
+        } else {
+          console.log(false);
+          return this.storage.set(this.HAS_LOGGED_IN, false);
+        }
+      })
+    ).toPromise();
   }
 
   signup(username: string): Promise<any> {

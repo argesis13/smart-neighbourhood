@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ModalController} from '@ionic/angular';
 
 @Component({
   selector: 'family-details',
@@ -21,16 +22,20 @@ export class FamilyDetailsPage implements OnInit {
 
   members = [this.mom, this.dad];
 
-  constructor() { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
   }
 
-  addMember() {
-    // username
-    // status
-    // picture
-    console.log('add member');
+  remove(member) {
+    this.members.pop();
   }
 
+  contact(member) {
+    console.log('contact');
+  }
+
+  addMember() {
+    console.log('add member');
+  }
 }
