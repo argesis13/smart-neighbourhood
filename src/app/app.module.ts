@@ -15,7 +15,6 @@ import { FormsModule } from '@angular/forms';
 import { VideoPlayer } from '@ionic-native/video-player/ngx';
 import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 import { ReactiveFormsModule } from '@angular/forms';
-
 @NgModule({
   imports: [
     BrowserModule,
