@@ -10,6 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Storage } from '@ionic/storage';
 
 import { UserData } from './providers/user-data';
+import {FCM} from '@ionic-native/fcm/ngx';
 
 @Component({
   selector: 'app-root',
@@ -61,6 +62,7 @@ export class AppComponent implements OnInit {
     private userData: UserData,
     private swUpdate: SwUpdate,
     private toastCtrl: ToastController,
+    private fcm: FCM
   ) {
     this.initializeApp();
   }
@@ -68,6 +70,9 @@ export class AppComponent implements OnInit {
   async ngOnInit() {
     this.checkLoginStatus();
     this.listenForLoginEvents();
+    this.fcm.getToken().then(token => {
+      console.log(token);
+    });
 
     this.swUpdate.available.subscribe(async res => {
       const toast = await this.toastCtrl.create({
