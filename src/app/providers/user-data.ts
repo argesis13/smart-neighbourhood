@@ -44,7 +44,7 @@ export class UserData {
     };
     return this.http.get('http://localhost:8282/users/' + username).pipe(
       map(response => {
-        return response.headers['status'];
+        return response;
       }),
       map(status => {
         console.log(status);
