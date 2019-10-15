@@ -35,14 +35,6 @@ export class UserData {
   }
 
   login(username: string): Promise<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'GET',
-        'Access-Control-Allow-Origin': '*',
-      })
-    };
-
     return this.http.get('http://localhost:8282/users/' + username).pipe(
       map(response => {
           if (response['username'] === username) {
@@ -58,27 +50,6 @@ export class UserData {
         }
       )
     ).toPromise();
-
-    // return this.http.get('http://localhost:8282/users/' + username).pipe(
-    //   map(response => {
-    //     return response.headers['status'];
-    //   }),
-    //   map(status => {
-    //     console.log(status);
-    //     if (status === 200) {
-    //       return this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
-    //         console.log(username);
-    //         this.setUsername(username);
-    //         return this.events.publish('user:login');
-    //       });
-    //     } else {
-    //       console.log(false);
-    //       return this.storage.set(this.HAS_LOGGED_IN, false);
-    //     }
-    //   })
-    // ).toPromise();
-
-
   }
 
   signup(username: string): Promise<any> {
