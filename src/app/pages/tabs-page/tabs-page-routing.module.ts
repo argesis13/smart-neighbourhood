@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
+import { LogsPage} from '../logs/logs';
 
 
 const routes: Routes = [
@@ -8,6 +9,19 @@ const routes: Routes = [
     path: 'tabs',
     component: TabsPage,
     children: [
+      {
+        path: 'logs',
+        children: [
+          {
+            path: '',
+            component: LogsPage,
+          },
+          {
+            path: 'log-detail/:logId',
+            loadChildren: () => import('../log-detail/log-detail.module').then(m => m.LogDetailModule)
+          }
+        ]
+      },
       {
         path: 'map',
         children: [
