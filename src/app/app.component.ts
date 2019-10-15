@@ -10,7 +10,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Storage } from '@ionic/storage';
 
 import { UserData } from './providers/user-data';
-import {FCM} from '@ionic-native/fcm/ngx';
+
+import { Plugins } from '@capacitor/core';
+import {FCM} from 'capacitor-fcm';
+
+const { PushNotifications } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -70,9 +74,7 @@ export class AppComponent implements OnInit {
   async ngOnInit() {
     this.checkLoginStatus();
     this.listenForLoginEvents();
-    this.fcm.getToken().then(token => {
-      console.log(token);
-    });
+
 
     this.swUpdate.available.subscribe(async res => {
       const toast = await this.toastCtrl.create({
@@ -97,6 +99,26 @@ export class AppComponent implements OnInit {
       this.splashScreen.hide();
     });
   }
+
+  publishNotifications() {
+    PushNotifications.register()
+      .then(_ => {
+        this.fcm
+          .subscribeTo({topic: 'test'})
+          .then(r => alert(`subscribed to topic`))
+          .catch(err => console.log(err));
+      })
+      .catch(err => alert(JSON.stringify(err)));
+
+//
+// Unsubscribe from a specific topic
+    this.fcm
+      .unsubscribeFrom({topic: 'test'})
+      .then(r => alert(`unsubscribed from topic`))
+      .catch(err => console.log(err));
+    this.fcm.getToken().then(token => console.log(token));
+  }
+
 
   checkLoginStatus() {
     return this.userData.isLoggedIn().then(loggedIn => {
