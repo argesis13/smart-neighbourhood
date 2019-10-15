@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ModalController} from '@ionic/angular';
+import {FamilyDetailsService} from '../../providers/family-details.service';
+import {map} from 'rxjs/operators';
+import {UserModel} from '../../interfaces/user-model';
+import {UserData} from '../../providers/user-data';
 
 @Component({
   selector: 'family-details',
@@ -8,27 +11,43 @@ import {ModalController} from '@ionic/angular';
 })
 export class FamilyDetailsPage implements OnInit {
 
-  mom = {
-    'username': 'mom',
-    'imageUrl': '../../assets/img/speakers/bear.jpg',
-    'status': 'IN'
-  };
+  members: UserModel[] = [];
 
-  dad = {
-    'username': 'dad',
-    'imageUrl': '../../assets/img/speakers/bear.jpg',
-    'status': 'OUT'
-  };
-
-  members = [this.mom, this.dad];
-
-  constructor(public modalController: ModalController) { }
+  constructor(private familyService: FamilyDetailsService, private userService: UserData) { }
 
   ngOnInit() {
+
   }
 
-  remove(member) {
-    this.members.pop();
+  ionViewWillEnter() {
+    this.getFamily();
+  }
+
+  getFamily() {
+    this.userService.getUsername().then(res => {
+      this.familyService.getFamily(res).pipe(
+        map(response => {
+          const members = response['members']
+          this.members = [];
+          for (const member of members) {
+            member['imageUrl'] = '../../assets/img/speakers/bear.jpg';
+            this.members.push(member as UserModel);
+          }
+        })
+      ).subscribe();
+    });
+  }
+
+  remove(memberName: string) {
+    console.log(memberName);
+    for (const member of this.members) {
+      if (member.username === memberName) {
+        const index = this.members.indexOf(member, 0);
+        if (index > -1) {
+          this.members.splice(index, 1);
+        }
+      }
+    }
   }
 
   contact(member) {

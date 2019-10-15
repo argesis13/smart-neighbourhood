@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {FamilyDetailsService} from '../../providers/family-details.service';
+import {UserData} from '../../providers/user-data';
 
 @Component({
   selector: 'dashboard',
@@ -8,13 +10,24 @@ import {Router} from '@angular/router';
 })
 export class DashboardPage implements OnInit {
 
+  members: number;
+
   ngOnInit() {
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private familyService: FamilyDetailsService, private userService: UserData) { }
+
+  ionViewWillEnter() {
+    this.userService.getUsername().then(res => {
+        this.familyService.getFamilyNumber(res).subscribe(
+          response => {
+            this.members = response;
+          }
+        );
+    });
+  }
 
   goToFamilyDetails() {
     this.router.navigateByUrl('/app/tabs/family-details');
   }
-
 }
