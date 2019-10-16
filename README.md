@@ -31,18 +31,33 @@ _Note: See [How to Prevent Permissions Errors](https://docs.npmjs.com/getting-st
 
 All app preview screenshots were taken by running `ionic serve --lab` on a retina display.
 
-- [Schedule Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/schedule/schedule.html)
+- [Login Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/login/login.html)
 
-  <img src="resources/screenshots/SchedulePage.png" alt="Schedule">
+  <img src="resources/screenshots/login.jpg" alt="Login">
+  
+- [Menu Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/dashboard/dashboard.page.html)
 
+  <img src="resources/screenshots/menu.jpg" alt="Menu">
+  
+- [Dashboard Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/dashboard/dashboard.page.html)
 
-- [About Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/about/about.html)
+  <img src="resources/screenshots/dashboard.jpg" alt="Dashboard">
 
-  <img src="resources/screenshots/AboutPage.png" alt="Schedule">
+- [Logs Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/logs/logs.html)
 
+  <img src="resources/screenshots/logs.jpg" alt="Logs">
 
-- To see more images of the app, check out the [screenshots directory](https://github.com/ionic-team/ionic-conference-app/tree/master/resources/screenshots)!
+- [Cameras Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/video-player/video-player.page.html)
 
+  <img src="resources/screenshots/cameras.jpg" alt="Cameras">
+  
+- [Account Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/account/account.html)
+
+  <img src="resources/screenshots/account.jpg" alt="Account">
+
+- [NFC Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/nfc/nfc.page.html)
+
+  <img src="resources/screenshots/nfc.jpg" alt="NFC">
 
 ## Deploying
 
@@ -54,7 +69,9 @@ All app preview screenshots were taken by running `ionic serve --lab` on a retin
 
 ### Android
 
-1. Run `ionic cordova run android --prod`
+1. Run `ionic integrations enable capacitor`
+2. Run `ionic build`
+3. Run `npx cap add ios`
 
 ### iOS
 
