@@ -3,6 +3,7 @@ import {FamilyDetailsService} from '../../providers/family-details.service';
 import {map} from 'rxjs/operators';
 import {UserModel} from '../../interfaces/user-model';
 import {UserData} from '../../providers/user-data';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'family-details',
@@ -13,7 +14,7 @@ export class FamilyDetailsPage implements OnInit {
 
   members: UserModel[] = [];
 
-  constructor(private familyService: FamilyDetailsService, private userService: UserData) { }
+  constructor(private familyService: FamilyDetailsService, private userService: UserData, private router: Router) { }
 
   ngOnInit() {
 
@@ -55,6 +56,6 @@ export class FamilyDetailsPage implements OnInit {
   }
 
   addMember() {
-    console.log('add member');
+    this.router.navigateByUrl('/app/tabs/family-details/add-member');
   }
 }

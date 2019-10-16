@@ -1,5 +1,5 @@
 import { Component, ElementRef, Inject, ViewChild, AfterViewInit } from '@angular/core';
-import { ConferenceData } from '../../providers/conference-data';
+import { MockData } from '../../providers/mock-data.service';
 import { Platform } from '@ionic/angular';
 import { DOCUMENT} from '@angular/common';
 
@@ -15,7 +15,7 @@ export class MapPage implements AfterViewInit {
 
   constructor(
     @Inject(DOCUMENT) private doc: Document,
-    public confData: ConferenceData,
+    public confData: MockData,
     public platform: Platform) {}
 
   async ngAfterViewInit() {

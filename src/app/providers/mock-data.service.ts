@@ -8,7 +8,7 @@ import { UserData } from './user-data';
 @Injectable({
   providedIn: 'root'
 })
-export class ConferenceData {
+export class MockData {
   data: any;
 
   constructor(public http: HttpClient, public user: UserData) {}

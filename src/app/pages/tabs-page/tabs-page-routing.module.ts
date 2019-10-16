@@ -64,6 +64,10 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () => import('../family-details/family-details.module').then(m => m.FamilyDetailsPageModule)
+          },
+          {
+            path: 'add-member',
+            loadChildren: () => import('../family-details/add-member/add-member.module').then(m => m.AddMemberPageModule)
           }
         ]
       },

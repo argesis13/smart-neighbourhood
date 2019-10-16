@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AlertController, Config, IonList, LoadingController, ModalController, ToastController} from '@ionic/angular';
-import {ConferenceData} from '../../providers/conference-data';
+import {MockData} from '../../providers/mock-data.service';
 import {Router} from '@angular/router';
 import {UserData} from '../../providers/user-data';
 import {ScheduleFilterPage} from '../schedule-filter/schedule-filter';
@@ -25,7 +25,7 @@ export class LogsPage implements OnInit {
 
   constructor(
     public alertCtrl: AlertController,
-    public confData: ConferenceData,
+    public confData: MockData,
     public loadingCtrl: LoadingController,
     public modalCtrl: ModalController,
     public router: Router,

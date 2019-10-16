@@ -4,8 +4,10 @@ import { VideoPlayer } from '@ionic-native/video-player/ngx';
 import { Platform } from '@ionic/angular';
 import { Plugins } from '@capacitor/core';
 import * as CapacitorVPPlugin from 'capacitor-video-player';
-import {ConferenceData} from '../../providers/conference-data';
+import {MockData} from '../../providers/mock-data.service';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
+import {CameraModel} from '../../interfaces/camera-model';
+import {UserModel} from '../../interfaces/user-model';
 
 
 const { CapacitorVideoPlayer, Device } = Plugins;
@@ -20,14 +22,16 @@ export class VideoPlayerPage implements OnInit {
 
   cameras: any[] = [];
 
-  constructor(private videoPlayer: VideoPlayer, public confData: ConferenceData, private streamingMedia: StreamingMedia) { }
+  constructor(private videoPlayer: VideoPlayer, public confData: MockData, private streamingMedia: StreamingMedia) { }
 
   ngOnInit() {
   }
 
   ionViewDidEnter() {
     this.confData.getCameras().subscribe((cameras: any[]) => {
-      this.cameras = cameras;
+      for (const camera of cameras) {
+        this.cameras.push(camera as CameraModel);
+      }
     });
   }
 
@@ -36,7 +40,7 @@ export class VideoPlayerPage implements OnInit {
     const options: StreamingVideoOptions = {
       successCallback: () => { console.log('Video played'); },
       errorCallback: (e) => { console.log('Error streaming'); },
-      orientation: 'landscape',
+      orientation: 'portrait',
       shouldAutoClose: true,
       controls: false
     };

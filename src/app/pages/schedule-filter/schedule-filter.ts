@@ -1,7 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Config, ModalController, NavParams } from '@ionic/angular';
 
-import { ConferenceData } from '../../providers/conference-data';
+import { MockData } from '../../providers/mock-data.service';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class ScheduleFilterPage implements AfterViewInit {
   tracks: {name: string, icon: string, isChecked: boolean}[] = [];
 
   constructor(
-    public confData: ConferenceData,
+    public confData: MockData,
     private config: Config,
     public modalCtrl: ModalController,
     public navParams: NavParams
