@@ -19,7 +19,7 @@ export class DashboardPage implements OnInit {
   }
 
   ngOnInit() {
-    this.sseStream = this.sseService.observeMessages('http://localhost:8282/access/query/cicoloco/1500')
+    this.sseStream = this.sseService.observeMessages('http://localhost:8282/access/query/cicoloco/10000')
       .subscribe(message => {
         console.log(message);
       });
