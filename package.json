@@ -36,6 +36,7 @@
     "@ionic-native/status-bar": "5.0.0-beta.15",
     "@ionic-native/streaming-media": "^5.15.0",
     "@ionic-native/video-player": "^5.15.0",
+    "@ionic-native/youtube-video-player": "^5.15.0",
     "@ionic/angular": "^4.10.0",
     "@ionic/storage": "^2.1.3",
     "capacitor-fcm": "^0.1.0",
@@ -51,6 +52,7 @@
     "cordova-plugin-streaming-media": "2.2.0",
     "cordova-plugin-video-player": "git+https://github.com/moust/cordova-plugin-videoplayer.git",
     "cordova-plugin-whitelist": "^1.3.4",
+    "cordova-plugin-youtube-video-player": "2.3.0",
     "core-js": "^3.2.1",
     "phonegap-nfc": "1.0.3",
     "rxjs": "^6.5.3",
@@ -102,7 +104,8 @@
       "com.moust.cordova.videoplayer": {},
       "cordova-plugin-streaming-media": {},
       "phonegap-nfc": {},
-      "cordova-plugin-fcm-with-dependecy-updated": {}
+      "cordova-plugin-fcm-with-dependecy-updated": {},
+      "cordova-plugin-youtube-video-player": {}
     }
   }
 }

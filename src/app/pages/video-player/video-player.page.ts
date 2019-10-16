@@ -8,6 +8,9 @@ import {MockData} from '../../providers/mock-data.service';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
 import {CameraModel} from '../../interfaces/camera-model';
 import {UserModel} from '../../interfaces/user-model';
+import {YoutubeVideoPlayer} from '@ionic-native/youtube-video-player/ngx';
+
+
 
 
 const { CapacitorVideoPlayer, Device } = Plugins;
@@ -22,7 +25,10 @@ export class VideoPlayerPage implements OnInit {
 
   cameras: any[] = [];
 
-  constructor(private videoPlayer: VideoPlayer, public confData: MockData, private streamingMedia: StreamingMedia) { }
+  constructor(private videoPlayer: VideoPlayer,
+              public confData: MockData,
+              private streamingMedia: StreamingMedia,
+              private youtube: YoutubeVideoPlayer) { }
 
   ngOnInit() {
   }
@@ -35,17 +41,17 @@ export class VideoPlayerPage implements OnInit {
     });
   }
 
-  async play() {
+  async play(camera: CameraModel) {
 
-    const options: StreamingVideoOptions = {
-      successCallback: () => { console.log('Video played'); },
-      errorCallback: (e) => { console.log('Error streaming'); },
-      orientation: 'portrait',
-      shouldAutoClose: true,
-      controls: false
-    };
-
-    this.streamingMedia.playVideo('https://youtu.be/CdZuOhld91g', options);
+    // const options: StreamingVideoOptions = {
+    //   successCallback: () => { console.log('Video played'); },
+    //   errorCallback: (e) => { console.log('Error streaming'); },
+    //   orientation: 'portrait',
+    //   shouldAutoClose: true,
+    //   controls: false
+    // };
+    //
+    // this.streamingMedia.playVideo(camera.url, options);
 
     // let videoPlayer: any;
     // const info = await Device.getInfo();
@@ -54,7 +60,10 @@ export class VideoPlayerPage implements OnInit {
     // } else {
     //   videoPlayer = CapacitorVPPlugin.CapacitorVideoPlayer;
     // }
-    // const res: any  = await videoPlayer.play({url: 'https://youtu.be/CdZuOhld91g'});
+    // const res: any  = await videoPlayer.play({url: camera.url});
+
+    this.youtube.openVideo('oCskwAt24UE');
+
   }
 
   playVideo() {
