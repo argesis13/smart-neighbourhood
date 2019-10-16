@@ -31,33 +31,34 @@ _Note: See [How to Prevent Permissions Errors](https://docs.npmjs.com/getting-st
 
 All app preview screenshots were taken by running `ionic serve --lab` on a retina display.
 
+https://github.com/argesis13/smart-neighbourhood/blob/develop/resources/screenshots/account.JPG
+https://github.com/argesis13/smart-neighbourhood/blob/develop/resources/screenshots/login.jpg
 - [Login Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/login/login.html)
-
-  <img src="resources/screenshots/login.jpg" alt="Login">
+  <img src="resources/screenshots/login.JPG" alt="Login">
   
 - [Menu Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/dashboard/dashboard.page.html)
 
-  <img src="resources/screenshots/menu.jpg" alt="Menu">
+  <img src="resources/screenshots/menu.JPG" alt="Menu">
   
 - [Dashboard Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/dashboard/dashboard.page.html)
 
-  <img src="resources/screenshots/dashboard.jpg" alt="Dashboard">
+  <img src="resources/screenshots/dashboard.JPG" alt="Dashboard">
 
 - [Logs Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/logs/logs.html)
 
-  <img src="resources/screenshots/logs.jpg" alt="Logs">
+  <img src="resources/screenshots/logs.JPG" alt="Logs">
 
 - [Cameras Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/video-player/video-player.page.html)
 
-  <img src="resources/screenshots/cameras.jpg" alt="Cameras">
+  <img src="resources/screenshots/cameras.JPG" alt="Cameras">
   
 - [Account Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/account/account.html)
 
-  <img src="resources/screenshots/account.jpg" alt="Account">
+  <img src="resources/screenshots/account.JPG" alt="Account">
 
 - [NFC Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/nfc/nfc.page.html)
 
-  <img src="resources/screenshots/nfc.jpg" alt="NFC">
+  <img src="resources/screenshots/nfc.JPG" alt="NFC">
 
 ## Deploying
 
