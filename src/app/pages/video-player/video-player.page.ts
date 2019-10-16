@@ -5,6 +5,8 @@ import { Platform } from '@ionic/angular';
 import { Plugins } from '@capacitor/core';
 import * as CapacitorVPPlugin from 'capacitor-video-player';
 import {ConferenceData} from '../../providers/conference-data';
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
+
 
 const { CapacitorVideoPlayer, Device } = Plugins;
 
@@ -18,7 +20,7 @@ export class VideoPlayerPage implements OnInit {
 
   cameras: any[] = [];
 
-  constructor(private videoPlayer: VideoPlayer, public confData: ConferenceData) { }
+  constructor(private videoPlayer: VideoPlayer, public confData: ConferenceData, private streamingMedia: StreamingMedia) { }
 
   ngOnInit() {
   }
@@ -30,14 +32,25 @@ export class VideoPlayerPage implements OnInit {
   }
 
   async play() {
-    let videoPlayer: any;
-    const info = await Device.getInfo();
-    if (info.platform === 'ios' || info.platform === 'android') {
-      videoPlayer = CapacitorVideoPlayer;
-    } else {
-      videoPlayer = CapacitorVPPlugin.CapacitorVideoPlayer;
-    }
-    const res: any  = await videoPlayer.play({url: 'https://clips.vorwaerts-gmbh.de/VfE_html5.mp4'});
+
+    const options: StreamingVideoOptions = {
+      successCallback: () => { console.log('Video played'); },
+      errorCallback: (e) => { console.log('Error streaming'); },
+      orientation: 'landscape',
+      shouldAutoClose: true,
+      controls: false
+    };
+
+    this.streamingMedia.playVideo('https://youtu.be/CdZuOhld91g', options);
+
+    // let videoPlayer: any;
+    // const info = await Device.getInfo();
+    // if (info.platform === 'ios' || info.platform === 'android') {
+    //   videoPlayer = CapacitorVideoPlayer;
+    // } else {
+    //   videoPlayer = CapacitorVPPlugin.CapacitorVideoPlayer;
+    // }
+    // const res: any  = await videoPlayer.play({url: 'https://youtu.be/CdZuOhld91g'});
   }
 
   playVideo() {

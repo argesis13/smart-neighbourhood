@@ -16,6 +16,7 @@ import { VideoPlayer } from '@ionic-native/video-player/ngx';
 import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 import { ReactiveFormsModule } from '@angular/forms';
 import {FCM} from 'capacitor-fcm';
+import {StreamingMedia} from '@ionic-native/streaming-media/ngx';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import {FCM} from 'capacitor-fcm';
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar, VideoPlayer, NFC, Ndef, FCM],
+  providers: [InAppBrowser, SplashScreen, StatusBar, VideoPlayer, NFC, Ndef, FCM, StreamingMedia],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
