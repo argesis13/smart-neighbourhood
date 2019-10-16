@@ -37,15 +37,10 @@ export class AddMemberPage implements OnInit {
   }
 
   addToFamily(member: UserModel) {
-    this.userService.getFamilyId().then(res => {
-      console.log(res);
+    this.userService.getUsername().then(
+      username => {
+        console.log(username);
+      this.familyService.addFamilyMember(username, member).subscribe();
     });
-    // this.userService.getUsername().then(
-    //   username => {
-    //     this.userService.getFamilyId().then(familyId => {
-    //       this.familyService.addFamilyMember(username, familyId, member);
-    //     });
-    //   }
-    // );
   }
 }

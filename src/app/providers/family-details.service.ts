@@ -30,9 +30,10 @@ export class FamilyDetailsService {
     return this.http.get('http://localhost:8282/users/search?username=' + username);
   }
 
-  public addFamilyMember(username: string, familyId: string, member: UserModel) {
-    const username1 = member.username;
-    return this.http.put('localhost:8282/users/' + username + '/family/' + familyId, {username1});
+  public addFamilyMember(username: string, member: UserModel) {
+    const memberUsername = [member.username];
+    // const requestBody = JSON.stringify(memberUsername);
+    return this.http.put('http://localhost:8282/users/' + username + '/family/add', memberUsername);
   }
 
 }

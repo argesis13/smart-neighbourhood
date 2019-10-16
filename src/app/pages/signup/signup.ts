@@ -24,10 +24,10 @@ export class SignupPage {
 
   onSignup(form: NgForm) {
     this.submitted = true;
-
     if (form.valid) {
-      this.userData.signup(this.signup.username);
-      this.router.navigateByUrl('/app/tabs/dashboard');
+      this.userData.signup(this.signup.username).subscribe(res => {
+        this.router.navigateByUrl('/app/tabs/dashboard');
+      });
     }
   }
 }

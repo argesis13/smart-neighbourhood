@@ -3,6 +3,7 @@ import { Events } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 
 @Injectable({
@@ -50,11 +51,17 @@ export class UserData {
     ).toPromise();
   }
 
-  signup(username: string): Promise<any> {
-    return this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
-      this.setUsername(username);
-      return this.events.publish('user:signup');
-    });
+  signup(username: string): Observable<any> {
+    return this.http.post('http://localhost:8282/users/', {username}).pipe(
+      map(res => {
+        console.log(res);
+        this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
+          console.log(username);
+          this.setUsername(username);
+          return this.events.publish('user:signup');
+        });
+      })
+    );
   }
 
   logout(): Promise<any> {

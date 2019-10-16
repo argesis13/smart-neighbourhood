@@ -19,7 +19,7 @@ export class FamilyDetailsPage implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-
+    this.getFamily();
   }
 
   ionViewWillEnter() {
@@ -28,6 +28,7 @@ export class FamilyDetailsPage implements OnInit {
 
   getFamily() {
     this.userService.getUsername().then(res => {
+      console.log(res);
       this.familyService.getFamily(res).pipe(
         map(response => {
           const members = response['members'];
