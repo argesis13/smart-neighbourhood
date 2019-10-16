@@ -9,8 +9,8 @@ This application is purely a kitchen-sink demo of the Ionic Framework and Angula
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [App Preview](#app-preview)
-- [Deploying](#deploying)
-  - [Progressive Web App](#progressive-web-app)
+- [Deploying](#Running)
+  - [Web Browser](#Web-browser)
   - [Android](#android)
   - [iOS](#ios)
 
@@ -58,20 +58,15 @@ All app preview screenshots were taken by running `ionic serve --lab` on a retin
 
   <img src="resources/screenshots/nfc.JPG" alt="NFC">
 
-## Deploying
+## Running
 
-### Progressive Web App
-
-1. Un-comment [these lines](https://github.com/ionic-team/ionic2-app-base/blob/master/src/index.html#L21)
-2. Run `npm run ionic:build --prod`
-3. Push the `www` folder to your hosting service
-
-### Android
+### Android & IOS
 
 1. Run `ionic integrations enable capacitor`
 2. Run `ionic build`
 3. Run `npx cap add ios`
+4. Run `npx cap add android`
+5. Run `npx cap sync`
+6. Run `npx cap copy`
+7. Run `npx cap open ios`
 
-### iOS
-
-1. Run `ionic cordova run ios --prod`
