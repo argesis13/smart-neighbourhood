@@ -53,17 +53,14 @@ export class VideoPlayerPage implements OnInit {
     //
     // this.streamingMedia.playVideo(camera.url, options);
 
-    // let videoPlayer: any;
-    // const info = await Device.getInfo();
-    // if (info.platform === 'ios' || info.platform === 'android') {
-    //   videoPlayer = CapacitorVideoPlayer;
-    // } else {
-    //   videoPlayer = CapacitorVPPlugin.CapacitorVideoPlayer;
-    // }
-    // const res: any  = await videoPlayer.play({url: camera.url});
-
-    this.youtube.openVideo('oCskwAt24UE');
-
+    let videoPlayer: any;
+    const info = await Device.getInfo();
+    if (info.platform === 'ios' || info.platform === 'android') {
+      videoPlayer = CapacitorVideoPlayer;
+    } else {
+      videoPlayer = CapacitorVPPlugin.CapacitorVideoPlayer;
+    }
+    const res: any  = await videoPlayer.play({url: camera.url});
   }
 
   playVideo() {

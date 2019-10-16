@@ -14,7 +14,9 @@ export class FamilyDetailsPage implements OnInit {
 
   members: UserModel[] = [];
 
-  constructor(private familyService: FamilyDetailsService, private userService: UserData, private router: Router) { }
+  constructor(private familyService: FamilyDetailsService,
+              private userService: UserData,
+              private router: Router) { }
 
   ngOnInit() {
 
@@ -28,7 +30,7 @@ export class FamilyDetailsPage implements OnInit {
     this.userService.getUsername().then(res => {
       this.familyService.getFamily(res).pipe(
         map(response => {
-          const members = response['members']
+          const members = response['members'];
           this.members = [];
           for (const member of members) {
             member['imageUrl'] = '../../assets/img/speakers/bear.jpg';

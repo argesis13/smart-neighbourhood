@@ -11,7 +11,6 @@ import {map} from 'rxjs/operators';
 export class UserData {
   _favorites: string[] = [];
   HAS_LOGGED_IN = 'hasLoggedIn';
-  HAS_SEEN_TUTORIAL = 'hasSeenTutorial';
 
   constructor(
     public events: Events,
@@ -39,12 +38,11 @@ export class UserData {
       map(response => {
           if (response['username'] === username) {
             return this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
-              console.log(username);
               this.setUsername(username);
+              this.setFamilyId(response['familyId']);
               return this.events.publish('user:login');
             });
           } else {
-            console.log(false);
             return this.storage.set(this.HAS_LOGGED_IN, false);
           }
         }
@@ -71,6 +69,10 @@ export class UserData {
     return this.storage.set('username', username);
   }
 
+  setFamilyId(familyID: string): Promise<any> {
+    return this.storage.set('familyId', familyID);
+  }
+
   setBuilding(building: string): Promise<any> {
     return this.storage.set('building', building);
   }
@@ -91,15 +93,15 @@ export class UserData {
     });
   }
 
-  isLoggedIn(): Promise<boolean> {
-    return this.storage.get(this.HAS_LOGGED_IN).then((value) => {
-      return value === true;
+  getFamilyId(): Promise<string> {
+    return this.storage.get('familyId').then((value) => {
+      return value;
     });
   }
 
-  checkHasSeenTutorial(): Promise<string> {
-    return this.storage.get(this.HAS_SEEN_TUTORIAL).then((value) => {
-      return value;
+  isLoggedIn(): Promise<boolean> {
+    return this.storage.get(this.HAS_LOGGED_IN).then((value) => {
+      return value === true;
     });
   }
 }

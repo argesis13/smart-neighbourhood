@@ -22,13 +22,11 @@ export class LoginPage {
 
   onLogin(form: NgForm) {
     this.submitted = true;
-
     if (form.valid) {
       this.userData.login(this.login.username).then(response => {
         if (response) {
           this.userData.isLoggedIn().then(
             loggedIn => {
-              console.log(loggedIn);
               if (loggedIn) {
                 this.router.navigateByUrl('/app/tabs/dashboard');
               }
