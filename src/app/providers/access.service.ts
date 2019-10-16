@@ -11,13 +11,13 @@ export class AccessService {
   constructor() {
   }
 
-  observeMessages(sseUrl: string): Observable<string> {
+  observeMessages(accessServiceUrl: string): Observable<string> {
     return new Observable<string>(obs => {
-      const es = new EventSource(sseUrl);
-      es.addEventListener('message', (evt) => {
+      const eventSource = new EventSource(accessServiceUrl);
+      eventSource.addEventListener('message', (evt) => {
         obs.next(evt.data);
       });
-      return () => es.close();
+      return () => eventSource.close();
     });
   }
 }
