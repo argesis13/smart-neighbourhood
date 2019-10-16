@@ -1,15 +1,17 @@
 # Ionic Angular Conference Application
 
-This application is purely a kitchen-sink demo of the Ionic Framework and Angular.
+This application is developed by Ansamblul Computational Vatra Luminoasa.
+It's currently under development, and it calls localhost endpoints. 
+It might not work untill we will have the backend deployed.
+In the resources folder we have attached screenshots.
 
-**There is not an actual Ionic Conference at this time.** This project is just to show off Ionic components in a real-world application. Please go through the steps in [CONTRIBUTING](https://github.com/ionic-team/ionic-conference-app/blob/master/.github/CONTRIBUTING.md) before submitting an issue.
-
+**Please refer to us if you want all the endpoints mocked**
 
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [App Preview](#app-preview)
-- [Deploying](#Running)
+- [Running](#Running)
   - [Web Browser](#Web-browser)
   - [Android](#android)
   - [iOS](#ios)
