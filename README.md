@@ -31,8 +31,6 @@ _Note: See [How to Prevent Permissions Errors](https://docs.npmjs.com/getting-st
 
 All app preview screenshots were taken by running `ionic serve --lab` on a retina display.
 
-https://github.com/argesis13/smart-neighbourhood/blob/develop/resources/screenshots/account.JPG
-https://github.com/argesis13/smart-neighbourhood/blob/develop/resources/screenshots/login.jpg
 - [Login Page](https://github.com/argesis13/smart-neighbourhood/blob/develop/src/app/pages/login/login.html)
   <img src="resources/screenshots/login.JPG" alt="Login">
   
