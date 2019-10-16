@@ -15,7 +15,6 @@ import { FormsModule } from '@angular/forms';
 import { VideoPlayer } from '@ionic-native/video-player/ngx';
 import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 import { ReactiveFormsModule } from '@angular/forms';
-import {FCM} from 'capacitor-fcm';
 import {StreamingMedia} from '@ionic-native/streaming-media/ngx';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 
@@ -33,7 +32,7 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar, VideoPlayer, NFC, Ndef, FCM, StreamingMedia, YoutubeVideoPlayer],
+  providers: [InAppBrowser, SplashScreen, StatusBar, VideoPlayer, NFC, Ndef, StreamingMedia, YoutubeVideoPlayer],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

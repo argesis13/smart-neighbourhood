@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {FamilyDetailsService} from '../../providers/family-details.service';
 import {UserData} from '../../providers/user-data';
+import {AccessService} from '../../providers/access.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'dashboard',
@@ -11,13 +13,20 @@ import {UserData} from '../../providers/user-data';
 export class DashboardPage implements OnInit {
 
   members: number;
+  private sseStream: Subscription;
 
-  ngOnInit() {
+  constructor(private router: Router, private familyService: FamilyDetailsService, private userService: UserData, public sseService: AccessService) {
   }
 
-  constructor(private router: Router, private familyService: FamilyDetailsService, private userService: UserData) { }
+  ngOnInit() {
+    this.sseStream = this.sseService.observeMessages('http://localhost:8282/access/query/cicoloco/1500')
+      .subscribe(message => {
+        console.log(message);
+      });
+  }
 
   ionViewWillEnter() {
+
     this.userService.getUsername().then(res => {
         this.familyService.getFamilyNumber(res).subscribe(
           response => {
