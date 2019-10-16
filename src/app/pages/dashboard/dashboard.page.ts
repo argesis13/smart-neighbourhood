@@ -15,14 +15,11 @@ export class DashboardPage implements OnInit {
   members: number;
   private sseStream: Subscription;
 
-  constructor(private router: Router, private familyService: FamilyDetailsService, private userService: UserData, public sseService: AccessService) {
+  constructor(private router: Router, private familyService: FamilyDetailsService, private userService: UserData) {
   }
 
   ngOnInit() {
-    this.sseStream = this.sseService.observeMessages('http://localhost:8282/access/query/cicoloco/10000')
-      .subscribe(message => {
-        console.log(message);
-      });
+
   }
 
   ionViewWillEnter() {
