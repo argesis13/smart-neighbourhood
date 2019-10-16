@@ -20,6 +20,10 @@ export class AddMemberPage implements OnInit {
   }
 
   search() {
+    if (this.queryText === '') {
+      this.members = [];
+      return;
+    }
     this.familyService.searchMember(this.queryText).pipe(
       map(res => {
         this.members = [];

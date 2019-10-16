@@ -15,7 +15,10 @@ export class DashboardPage implements OnInit {
   members: number;
   private sseStream: Subscription;
 
-  constructor(private router: Router, private familyService: FamilyDetailsService, private userService: UserData, public sseService: AccessService) {
+  constructor(private router: Router,
+              private familyService: FamilyDetailsService,
+              private userService: UserData,
+              public sseService: AccessService) {
   }
 
   ngOnInit() {
