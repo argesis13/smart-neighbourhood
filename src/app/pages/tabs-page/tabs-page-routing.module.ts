@@ -62,7 +62,7 @@ const routes: Routes = [
         path: 'family-details',
         children: [
           {
-            path: '',
+            path: 'members',
             loadChildren: () => import('../family-details/family-details.module').then(m => m.FamilyDetailsPageModule)
           },
           {
