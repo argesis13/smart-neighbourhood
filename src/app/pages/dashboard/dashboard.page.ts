@@ -34,6 +34,6 @@ export class DashboardPage implements OnInit {
   }
 
   goToFamilyDetails() {
-    this.router.navigateByUrl('/app/tabs/family-details');
+    this.router.navigateByUrl('/app/tabs/family-details/members');
   }
 }
