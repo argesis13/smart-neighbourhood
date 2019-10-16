@@ -1,16 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { VideoPlayer } from '@ionic-native/video-player/ngx';
-
-import { Platform } from '@ionic/angular';
-import { Plugins } from '@capacitor/core';
+import {Component, OnInit} from '@angular/core';
+import {VideoPlayer} from '@ionic-native/video-player/ngx';
+import {Plugins} from '@capacitor/core';
 import * as CapacitorVPPlugin from 'capacitor-video-player';
 import {MockData} from '../../providers/mock-data.service';
-import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
+import {StreamingMedia} from '@ionic-native/streaming-media/ngx';
 import {CameraModel} from '../../interfaces/camera-model';
-import {UserModel} from '../../interfaces/user-model';
 import {YoutubeVideoPlayer} from '@ionic-native/youtube-video-player/ngx';
-
-
 
 
 const { CapacitorVideoPlayer, Device } = Plugins;
