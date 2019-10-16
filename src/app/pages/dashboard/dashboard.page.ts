@@ -12,19 +12,26 @@ import {Subscription} from 'rxjs';
 })
 export class DashboardPage implements OnInit {
 
-  members: number;
+  members = 0;
   private sseStream: Subscription;
 
   constructor(private router: Router, private familyService: FamilyDetailsService, private userService: UserData) {
   }
 
   ngOnInit() {
-
+    this.userService.getUsername().then(res => {
+    this.members = 0;
+      this.familyService.getFamilyNumber(res).subscribe(
+        response => {
+          this.members = response;
+        }
+      );
+    });
   }
 
   ionViewWillEnter() {
-
     this.userService.getUsername().then(res => {
+      this.members = 0;
         this.familyService.getFamilyNumber(res).subscribe(
           response => {
             this.members = response;

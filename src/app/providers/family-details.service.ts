@@ -21,6 +21,7 @@ export class FamilyDetailsService {
     return this.http.get('http://localhost:8282/users/' + username + '/family' ).pipe(
       map(res => {
         const members = res['members'] as [];
+        console.log(members.length);
         return members.length;
       })
     );
