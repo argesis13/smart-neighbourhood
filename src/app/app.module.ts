@@ -17,6 +17,7 @@ import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 import { ReactiveFormsModule } from '@angular/forms';
 import {StreamingMedia} from '@ionic-native/streaming-media/ngx';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import {AccessService} from './providers/access.service';
 
 @NgModule({
   imports: [

@@ -8,10 +8,7 @@ import {Observable, pipe} from 'rxjs';
 export class AccessService {
 
   constructor() {
-    this.observeMessages('http://localhost:8282/access/query/cicoloco/10000')
-      .subscribe(message => {
-        console.log(message);
-      });
+
   }
 
   observeMessages(accessServiceUrl: string): Observable<string> {
