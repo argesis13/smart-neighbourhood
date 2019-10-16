@@ -1,4 +1,4 @@
-# Ionic Angular Conference Application
+# Ionic Connected Neighbourhood Application
 
 This application is developed by Ansamblul Computational Vatra Luminoasa.
 It's currently under development, and it calls localhost endpoints. 
